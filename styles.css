@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bgd-color: rgb(8 145 178);
+    --font-color: rgb(85 85 85);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+body {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--font-color);
+}
+
+h1 {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    transform: translate(0%, -100%);
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+header {
+    display: flex;
+    padding: 90px 120px;
+    background: linear-gradient(
+    170deg,
+    var(--bgd-color) 60%,
+    white 40%
+    ); 
+}
+
+.about-img {
+    min-width: 700px;
+    position: relative;
+    display: inline-block;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 90px 0 60px;
+    padding: 40px;
+}
+
+.about p {
+    font-size: 2rem;
+}
+
+.header-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.header-icons img {
+    max-width: 50px;
+}
+
+.header-icons > :first-child,
+.header-icons > :nth-child(2) {
+    margin-right: 30px; 
+}
+
+.contact img,
+.footer-icons img {
+    max-width: 60px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 90px 120px;
+    margin: 0 auto; 
+}
+
+main h2 {
+    align-self: flex-start;
+}
+
+.projects {
+    display: grid;
+    gap: 40px 30px;
+    max-width: 960px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.screenshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 56px;
+    aspect-ratio: 1 / 1;
+}
+
+.screenshot-1 {
+    background-color: rgb(158 28 28);
+}
+
+.screenshot-2 {
+    background-color: rgb(124 117 202);
+}
+
+.screenshot-3 {
+    background-color: rgb(94 143 77);
+}
+
+.screenshot-4 {
+    background-color: rgb(195 99 180);
+}
+
+.screenshot-5 {
+    background-color: rgb(216 143 57);
+}
+
+.screenshot-6 {
+    background-color: rgb(75 162 210);
+}
+
+.info {
+    padding: 20px 30px 80px 30px;
+}
+
+.name-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+}
+
+.links img {
+    width: 30px;
+}
+
+.links > :nth-child(2) {
+    margin-left: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 120px;
+    color: white;
+    background-color: var(--bgd-color)
+}
+
+footer > img {
+    max-width: 1000px;
+    margin-left: 80px;
+}
+
+.contact > * {
+    margin: 30px 0;
+}
+
+.contact > *:not(:first-child) {
+    font-size: 2rem;
+}
+
+.phone,
+.email {
+    display: flex;
+    align-items: center;
+}
+
+.phone span,
+.email span {
+    margin-left: 20px;
+}
+
+.footer-icons {
+    display: flex;
+}
+
+.footer-icons > :first-child,
+.footer-icons > :nth-child(2) {
+    margin-right: 40px; 
+}
+
+/* @media (max-width: 900px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+} */
