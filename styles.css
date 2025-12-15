@@ -79,27 +79,31 @@ header {
     170deg,
     var(--bgd-color) 60%,
     white 40%
-    ); 
+    );
 }
 
 .about-img {
     min-width: 700px;
-    position: relative;
-    display: inline-block;
+    display: grid;
+    grid-template-areas: "stack";
+    place-items: end center;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.about-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+.about-img picture {
+    grid-area: stack;
 }
 
 .about-img h1 {
-    position: absolute;
+    grid-area: stack;
+    z-index: 1;
     color: white;
-    font-size: 3rem;
-    transform: translate(0%, -100%);
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .about {
@@ -109,6 +113,10 @@ header {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     margin: 90px 0 60px;
     padding: 40px;
+}
+
+.about h2 {
+    margin-bottom: 30px;
 }
 
 .about p {
@@ -138,7 +146,7 @@ header {
 main {
     width: 100%;
     padding: 90px 120px;
-    margin: 0 auto; 
+    margin: 0 auto 80px; 
 }
 
 main h2 {
@@ -234,9 +242,17 @@ footer {
     background-color: var(--bgd-color)
 }
 
-footer > img {
-    max-width: 1000px;
-    margin-left: 80px;
+footer > picture {
+    flex: 1 0 1000px;
+}
+
+.contact {
+    flex: 0 1 auto;
+    margin-right: 50px;
+}
+
+.contact address {
+    font-style: normal;
 }
 
 .contact > * {
@@ -256,15 +272,17 @@ footer > img {
     display: flex;
     align-items: center;
     gap: 18px;
+    margin-bottom: 20px;
 }
 
 .phone img,
 .email img {
-    width: 60px;
+    width: 50px;
 }
 
 .footer-icons {
     display: flex;
+    margin-top: 50px;
 }
 
 .footer-icons > :first-child,
