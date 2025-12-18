@@ -3,6 +3,8 @@
 :root {
     --bgd-color: rgb(8 145 178);
     --font-color: rgb(85 85 85);
+    --padding: 4.5vw 6.5vw;
+    --shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* CSS RESET STARTS HERE */
@@ -53,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 /* CSS RESET ENDS HERE */
 
 body {
-    width: 100%;
+    min-width: 300px;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -68,77 +70,90 @@ h1, h2, h3 {
     color: black;
 }
 
+h1 {
+    font-size: clamp(4.5rem, 5vw, 6rem);
+}
+
 h2 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 4.5vw, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.3rem, 7vw, 2rem);
 }
 
 header {
+    width: 100%;
     display: flex;
-    padding: 90px 120px;
+    padding: var(--padding);
     background: linear-gradient(
-    169deg,
-    var(--bgd-color) 69%,
-    rgba(0, 0, 0, 0.1) 69.1%,
-    white 69.2%
+    168.5deg,
+    var(--bgd-color) 71%,
+    rgba(0, 0, 0, 0.1) 71.1%,
+    white 71.2%
     );
 }
 
 .about-img {
     align-self: flex-start;
-    min-width: 700px;
+    flex: 2 0 auto;
+    width: 45%;
     display: grid;
     grid-template-areas: "stack";
     place-items: start center;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
+    z-index: 1;
 }
 
 .about-img picture {
     grid-area: stack;
+    /* z-index: 1; */
 }
 
 .about-img h1 {
     grid-area: stack;
-    z-index: 1;
+    place-self: end center;
+    /* z-index: 1; */
+    padding: 0 20px;
     color: white;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 6rem;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    place-self: end center;
+    text-shadow: var(--shadow);
 }
 
 .about-text {
     display: flex;
     flex-direction: column;
     background-color: white;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
     margin: 90px 0 60px;
-    padding: 40px;
+    padding: clamp(12px, 2.1vw, 40px);
 }
 
 .about-text h2 {
-    margin-bottom: 30px;
+    margin-bottom: 1.6vw;
 }
 
 .about-text p {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
-.header-icons {
+.about-icons {
     display: flex;
     justify-content: flex-end;
     margin-top: auto;
 }
 
-.header-icons img {
-    max-width: 50px;
+.about-icons img {
+    width: clamp(2rem, 2.6vw, 3rem);
 }
 
-.header-icons > :first-child,
-.header-icons > :nth-child(2) {
-    margin-right: 30px; 
+.about-icons > :first-child,
+.about-icons > :nth-child(2) {
+    margin-right: clamp(1.5rem, 2vw, 2.5rem);
 }
 
 .contact img,
@@ -148,26 +163,26 @@ header {
 
 main {
     width: 100%;
-    padding: 90px 120px;
+    padding: var(--padding);
     margin: 0 auto 80px; 
 }
 
 main h2 {
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
 }
 
 .projects {
     width: 100%;
     display: grid;
     place-items: center;
-    gap: 80px 60px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));    
+    gap: 4.2vw 3.1vw;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
 .project {
     display: flex;
     flex-direction: column;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
 }
 
 .screenshot {
@@ -175,12 +190,12 @@ main h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 70px;
+    padding: clamp(20px, 3.5vw, 70px);
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 4rem;
+    font-size: clamp(3rem, 4.5vw, 4rem);
     color: white;
     aspect-ratio: 1.4 / 1;
 }
@@ -219,40 +234,32 @@ main h2 {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-.project-info p {
-    font-size: 1.5rem;
-    line-height: 1.2;
 }
 
 .project-links {
-    margin-left: auto;
+    margin-left: 20px;
     display: inline-flex;
     gap: 20px;
 }
 
 .project-links img {
-    width: 35px;
+    width: clamp(26px, 2.5vw, 36px);
     vertical-align: middle;
 }
 
+.project-info p {
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    line-height: 1.2;
+}
+
 footer {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 90px 120px;
+    padding: var(--padding);
+    gap: 10px;
     color: white;
     background-color: var(--bgd-color)
-}
-
-footer > picture {
-    flex: 0 1 1000px;
-}
-
-.contact {
-    flex: 0 1 620px;
 }
 
 .contact address {
@@ -260,11 +267,11 @@ footer > picture {
 }
 
 .contact > * {
-    margin-bottom: 30px;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 .contact > *:not(:first-child) {
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 2.5vw, 2rem);
 }
 
 .contact h2 {
@@ -275,18 +282,18 @@ footer > picture {
 .email {
     display: flex;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 20px;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    margin-bottom: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .phone img,
 .email img {
-    width: 50px;
+    width: clamp(2rem, 3vw, 2.6rem);
 }
 
 .footer-icons {
     display: flex;
-    margin-top: 50px;
+    margin-top: clamp(1.2rem, 2.5vw, 2.6rem);
 }
 
 .footer-icons > :first-child,
@@ -294,14 +301,68 @@ footer > picture {
     margin-right: 40px; 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1430px) {
     .projects {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(290px, 2fr));
+    }
+    .about-icons {
+        display: none;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 710px) {
+    h2 {
+        text-align: center;
+    }
+    header {
+        flex-direction: column;
+        background: linear-gradient(
+        144deg,
+        var(--bgd-color) 40%,
+        rgba(0, 0, 0, 0.1) 40.1%,
+        white 40.2%
+        );
+    }
+    .about-img {
+        width: 100%;
+    }
+    .about-icons {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+    .about-text {
+        margin-top: 0;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none;
+    }
     .projects {
         grid-template-columns: 1fr;
+    }
+    footer {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .contact {
+        padding: var(--padding);
+    }
+    .contact > div:first-of-type {
+        font-size: 1.5rem;
+    }
+    .phone,
+    .email {
+        gap: 0;
+    }
+    .phone img,
+    .email img {
+    display: none;
+    }
+    .footer-icons {
+        justify-content: center;
+    }
+    picture img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }
