@@ -71,7 +71,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(4.5rem, 5vw, 6rem);
+    font-size: clamp(4rem, 6vw, 6rem);
 }
 
 h2 {
@@ -96,36 +96,31 @@ header {
 
 .about-img {
     align-self: flex-start;
-    flex: 2 0 auto;
-    width: 45%;
+    width: clamp(300px, 55vw, 900px);
+    flex: 2 1 auto;
+    width: 45%; 
     display: grid;
     grid-template-areas: "stack";
     place-items: start center;
     box-shadow: var(--shadow);
-    z-index: 1;
 }
 
 .about-img picture {
     grid-area: stack;
-    /* z-index: 1; */
 }
 
 .about-img h1 {
     grid-area: stack;
     place-self: end center;
-    /* z-index: 1; */
-    padding: 0 20px;
+    padding: 0 15px;
     color: white;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
     text-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
 
 .about-text {
     width: 55%;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -304,11 +299,43 @@ footer {
 }
 
 @media (max-width: 1430px) {
-    .projects {
-        grid-template-columns: repeat(auto-fit, minmax(290px, 2fr));
+    header {
+        display: flow-root;
+    }
+    .about-img {
+        position: relative;
+        float: left;
+        width: clamp(400px, 50vw, 650px);
+        margin-right: clamp(1.1rem, 2vw, 2rem);
+    }
+    .about-img h1 {
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+        transform: translateX(85%);
+    }
+    .about-text {
+        width: auto;
+        display: block;
+        margin-top: clamp(100px, 10vw, 140px);
+        margin-left: 4rem;
+        margin-bottom: 0;
+        padding: 5rem 3rem;
+    }
+    .about-text h2 {
+        text-align: center;
     }
     .about-icons {
         display: none;
+    }
+    .projects {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 2fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .about-img h1 {
+        transform: translateX(43%);
     }
 }
 
@@ -317,6 +344,7 @@ footer {
         text-align: center;
     }
     header {
+        display: flex;
         flex-direction: column;
         background: linear-gradient(
         144deg,
@@ -325,8 +353,15 @@ footer {
         white 40.2%
         );
     }
-    .about-img {
+    .about-img,
+    .about-text {
         width: 100%;
+    }
+    .about-img h1 {
+        position: relative;
+        place-self: end center;
+        transform: translateX(0%);
+        white-space: wrap;
     }
     .about-icons {
         width: 100%;
@@ -334,7 +369,9 @@ footer {
         display: flex;
     }
     .about-text {
-        margin-top: 0;
+        display: flex;
+        margin: 0;
+        padding-top: 40px;
         background-color: rgba(0, 0, 0, 0);
         box-shadow: none;
     }
