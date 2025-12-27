@@ -96,9 +96,8 @@ header {
 
 .about-img {
     align-self: flex-start;
-    width: clamp(300px, 55vw, 900px);
+    width: clamp(300px, 55vw, 720px);
     flex: 2 1 auto;
-    width: 45%; 
     display: grid;
     grid-template-areas: "stack";
     place-items: start center;
@@ -360,8 +359,11 @@ footer {
     .about-img h1 {
         position: relative;
         place-self: end center;
-        transform: translateX(0%);
-        white-space: wrap;
+        transition: none;
+        transform: none;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
     .about-icons {
         width: 100%;
